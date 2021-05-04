@@ -34,7 +34,7 @@
 
 
 
-void factorial(struct bn* n, struct bn* res)
+void factorial(_Ptr<struct bn> n, _Ptr<struct bn> res)
 {
   struct bn tmp;
 
@@ -66,7 +66,7 @@ int factorial_main()
 {
   struct bn num;
   struct bn result;
-  char buf[8192];
+  char buf _Nt_checked[8192];
 
   bignum_from_int(&num, 100);
   factorial(&num, &result);
