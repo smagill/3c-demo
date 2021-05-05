@@ -6,7 +6,7 @@
 
 enum { ADD, SUB, MUL, DIV, AND, OR, XOR, POW, MOD, RSHFT, LSHFT, ISQRT };
 
-int randomized_main(int argc, char** argv)
+int randomized_main(int argc, _Array_ptr<_Nt_array_ptr<char>> argv)
 {
 
   if (argc < 5)
@@ -72,7 +72,7 @@ int randomized_main(int argc, char** argv)
 
   if (!cmp_result)
   {
-    char buf[8192];
+    char buf _Nt_checked[8192];
     bignum_to_string(&res, buf, sizeof(buf));
     printf("\ngot %s\n", buf);
     printf(" a  = %d \n", bignum_to_int(&a));
